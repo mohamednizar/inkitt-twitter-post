@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tooltiptext.innerHTML = '<span class="tooltiptext"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i><a class="twitter-share-button"  > <i class="fa fa-twitter fa-lg" id="share-button"  aria-hidden="true"></i></a></span>';
                 setToolTip(tooltiptext, sel);
             } else {
-                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than sharble content on tweet</span> '
+                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet</span> '
                 setToolTip(tooltiptext, sel);
             }
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     setToolTip(tooltiptext, sel);
                 }
             } else {
-                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than sharble content on tweet</span> '
+                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet</span> '
                 setToolTip(tooltiptext, sel);
             }
         }
