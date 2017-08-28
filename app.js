@@ -1,4 +1,7 @@
-
+/**
+ * helper function to pop window
+ * @param {*} url 
+ */
 function popitup(url) {
     newwindow = window.open(url, 'name', 'height=400,width=600,top=200,left=400');
     if (window.focus) { newwindow.focus() }
@@ -10,7 +13,7 @@ var output = document.getElementById('output')
 var tooltiptext = document.createElement('span');
 var twitterUrl = 'https://twitter.com/intent/tweet?text=';
 
-
+// listen the selection add popup the tooltip for share
 quotearea.addEventListener('mouseup', function () {
     var node = ''
     var tooltipSpan = document.getElementsByClassName('tooltiptext');
@@ -30,9 +33,9 @@ quotearea.addEventListener('mouseup', function () {
             var text = sel.toString() + '  ' + window.location.href
             var shareButton = document.getElementById('share-button');
             shareButton.addEventListener('mouseup', function () {
+                tooltiptext.style.display = 'none';
                 popitup(twitterUrl + text);
             })
-            return;
         } else {
             tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than sharble content on tweet</span> '
             tooltiptext.style.position = 'fixed';              // fixed positioning = easy mode
@@ -41,7 +44,6 @@ quotearea.addEventListener('mouseup', function () {
             tooltiptext.style.height = rect.height + 'px'; // and size
             tooltiptext.style.width = rect.width + 'px';
             quotearea.appendChild(tooltiptext);
-            return;
         }
 
     }
@@ -55,6 +57,11 @@ quotearea.addEventListener('mouseup', function () {
             tooltiptext.style.height = rect.height + 'px'; // and size
             tooltiptext.style.width = rect.width + 'px';
             quotearea.appendChild(tooltiptext);
+            var shareButton = document.getElementById('share-button');
+            shareButton.addEventListener('mouseup', function () {
+                tooltiptext.style.display = 'none';
+                popitup(twitterUrl + textRange.text);
+            })
         } else {
             tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than sharble content on tweet</span> '
             tooltiptext.style.position = 'fixed';              // fixed positioning = easy mode
@@ -63,11 +70,11 @@ quotearea.addEventListener('mouseup', function () {
             tooltiptext.style.height = rect.height + 'px'; // and size
             tooltiptext.style.width = rect.width + 'px';
             quotearea.appendChild(tooltiptext);
-            return;
         }
     }
 }, false)
 
+// reset 
 quotearea.addEventListener('mouseleave', function () {
     tooltiptext.innerHTML = '';
 });

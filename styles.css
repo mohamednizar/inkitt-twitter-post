@@ -3,7 +3,6 @@
     position: fixed;
     top:20%;
     display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 /* Tooltip text */
@@ -18,7 +17,7 @@
     top:15%;
 
     /* Position the tooltip text */
-    position: fixed;
+    position: absolute;
     z-index: 1;
     left: 50%;
     margin-left: -60px;
@@ -41,7 +40,7 @@
 /* Tooltip arrow */
 .tooltip .tooltiptext::after {
     content: "";
-    position: absolute;
+    position: relative;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
