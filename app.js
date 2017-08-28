@@ -18,7 +18,8 @@ quotearea.addEventListener('mouseup', function () {
     var node = ''
     var tooltipSpan = document.getElementsByClassName('tooltiptext');
 
-    if (document.getSelection) {    // all browsers, except IE before version 9
+    if (document.getSelection) {   
+         // all browsers, except IE before version 9
         var sel = document.getSelection(),
             range = sel.getRangeAt(0),        // the range at first selection group
             rect = range.getBoundingClientRect(); // and convert this to useful data
