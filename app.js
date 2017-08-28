@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
+    /**
+     * main function, do the logic
+     */
     function select() {
         // listen the selection add popup the tooltip for share
         var node = ''
@@ -73,14 +75,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    /**
+     * listen and fire the pop on select
+     */
     quotearea.addEventListener('mouseup', function () {
         select();
     })
-
-
-    // quotearea.addEventListener('mouseleave', function () {
-    //     tooltiptext.innerHTML = null;
-    // });
 
 });
 
