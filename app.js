@@ -1,3 +1,4 @@
+
 // twitter post sharing app
 var quotearea = document.getElementById('artical')
 var output = document.getElementById('output')
@@ -23,7 +24,7 @@ function setToolTip(tooltiptext, sel) {
         rect = range.getBoundingClientRect();
     this.tooltiptext = tooltiptext;
     this.tooltiptext.style.position = 'fixed';              // fixed positioning = easy mode
-    this.tooltiptext.style.top = rect.top - 50 + 'px';       // set coordinates
+    this.tooltiptext.style.top = rect.top - 40 + 'px';       // set coordinates
     this.tooltiptext.style.left = rect.left + 'px';
     this.tooltiptext.style.height = rect.height + 'px'; // and size
     this.tooltiptext.style.width = rect.width + 'px';
@@ -75,7 +76,6 @@ quotearea.addEventListener('mouseup', function () {
 quotearea.addEventListener('mouseleave', function () {
     tooltiptext.innerHTML = '';
 });
-
 
 
 
