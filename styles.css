@@ -29,7 +29,7 @@
     transition: opacity 1s;
 }
 a
-.tooltip:before{
+.tooltip .tooltiptext:before{
     content:'';
     display:block;
     width:0;
