@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tooltiptext.innerHTML = '<span class="tooltiptext"><a><span class="icon "><i class="fa fa-paint-brush fa-lg" aria-hidden="true"></i><span></a><a><span class="icon "><i class="fa fa-comment fa-lg" aria-hidden="true"></i></span></a><a><span  class="icon "><i class="fa fa-twitter fa-lg" id="share-button"  aria-hidden="true"></i><span></a><div class="arrow-clip"><span class="tooltip-arrow"></span></div></span>';
                 setToolTip(tooltiptext, sel);
             } else if (text.length > 140) {
-                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet<div class="arrow-clip"><span class="tooltip-arrow"></span></div></span> '
+                tooltiptext.innerHTML = '<span class="tooltiptext"><small>It\'s too large to share</small><div class="arrow-clip"><span class="tooltip-arrow"></span></div></span> '
                 setToolTip(tooltiptext, sel);
             } else {
                 tooltiptext.innerHTML = '';
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     setToolTip(tooltiptext, sel);
                 }
             } else if (sel.toString().length > 140) {
-                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet<div class="arrow-clip"><span class="tooltip-arrow"></span></div></span> '
+                tooltiptext.innerHTML = '<span class="tooltiptext"><small>It\'s too large to share</small><div class="arrow-clip"><span class="tooltip-arrow"></span></div></span> '
                 setToolTip(tooltiptext, sel);
             } else {
                 tooltiptext.innerHTML = '';
