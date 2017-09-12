@@ -8,7 +8,6 @@
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: visible;
-    opacity: 1;
     min-width: 160px;
     max-width: 280px;
     font-size: 0.9em;
@@ -60,6 +59,10 @@
     margin: 20x;
 }
 
+.tooltiptext a {
+    color: #ffffff;
+}
+
 a:hover.tip {
     font-size: 99%; /* this is just for IE */
 }
@@ -70,7 +73,7 @@ a:hover.tip {
 }
 
 .tooltip i:hover {
-    color: #ffffff;
+    color: #00d1b2;
     transition: opacity 1s;
     -webkit-animation: fadein 0.1s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 0.1s; /* Firefox < 16 */
@@ -80,8 +83,8 @@ a:hover.tip {
 }
 
 @keyframes fadein {
-    from { color: #00d1b2; }
-    to   { color: #ffffff; }
+    from { color: #ffffff; }
+    to   { color: #00d1b2;}
 }
 
 @keyframes pop {
