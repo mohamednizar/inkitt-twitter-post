@@ -7,11 +7,9 @@
 
 /* Tooltip text */
 .tooltip .tooltiptext {
-    /*visibility: hidden;*/
-    /*width: 120px;*/
     visibility: visible;
     opacity: 1;
-    min-width: 120px;
+    min-width: 160px;
     max-width: 280px;
     font-size: 0.9em;
     background-image:linear-gradient(to top,rgba(85,85,85,.99),#555555) ;
@@ -21,7 +19,14 @@
     padding: 10px;
     border-radius: 6px;
     top:0;
-    
+
+    /* animate the tooltip */
+     -webkit-animation: pop 0.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: pop 0.5s; /* Firefox < 16 */
+    -ms-animation: pop 0.5s; /* Internet Explorer */
+    -o-animation: pop 0.5s; /* Opera < 12.1 */
+    animation: pop 0.5s;
+
     /* Position the tooltip text */
     position: relative;
     z-index: 1;
@@ -59,6 +64,30 @@ a:hover.tip {
     font-size: 99%; /* this is just for IE */
 }
 
+.tooltiptext .icon {
+    margin: 4px;
+    padding:4px;
+}
+
+.tooltip i:hover {
+    color: #ffffff;
+    transition: opacity 1s;
+    -webkit-animation: fadein 0.1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.1s; /* Firefox < 16 */
+    -ms-animation: fadein 0.1s; /* Internet Explorer */
+    -o-animation: fadein 0.1s; /* Opera < 12.1 */
+    animation: fadein 0.1s;
+}
+
+@keyframes fadein {
+    from { color: #00d1b2; }
+    to   { color: #ffffff; }
+}
+
+@keyframes pop {
+    from { opacity: 0; top:-30%}
+    to { opacity: 1 ; top:15%}
+}
 
 .tooltiptext a:link {
     color:#ffffff;
