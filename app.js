@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.focus) { newwindow.focus() }
         return false;
     }
+
     /**
      * helper funtionto set tooltip
      * @param {*} tooltiptext 
@@ -52,25 +53,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 range = sel.getRangeAt(0),        // the range at first selection group
                 rect = range.getBoundingClientRect(); // and convert this to useful data
             var text = sel.toString();
-            if (140 >= text.length > 0) {
-                tooltiptext.innerHTML = '<span class="tooltiptext"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i><a class="twitter-share-button"  > <i class="fa fa-twitter fa-lg" id="share-button"  aria-hidden="true"></i></a></span>';
+            if (text.length <= 140 && text.length > 0) {
+                console.log(text.length)
+                tooltiptext.innerHTML = '<span class="tooltiptext"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i><a class="twitter-share-button"  > <i class="fa fa-twitter fa-lg" id="share-button"  aria-hidden="true"></i></a><div class="arrow-clip"><span class="tooltip-arrow"></span></div></span>';
                 setToolTip(tooltiptext, sel);
-            } else {
-                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet</span> '
+            } else if (text.length > 140) {
+                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet<div class="arrow-clip"><span class="tooltip-arrow"></span></div></span> '
                 setToolTip(tooltiptext, sel);
+            }else{
+                 tooltiptext.innerHTML = '';
             }
 
         }
         else {
             if (document.selection) {   // Internet Explorer before version 9
                 var textRange = document.selection.createRange();
-                if (140 >= sel.toString().length > 0) {
-                    tooltiptext.innerHTML = '<span class="tooltiptext"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i><a class="twitter-share-button" > <i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></span>';
+                if (sel.toString().length <= 140 && sel.toString().length > 0) {
+                    tooltiptext.innerHTML = '<span class="tooltiptext"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i><a class="twitter-share-button" > <i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a><div class="arrow-clip"><span class="tooltip-arrow"></span></div></span>';
                     setToolTip(tooltiptext, sel);
                 }
-            } else {
-                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet</span> '
+            } else if (sel.toString().length > 140) {
+                tooltiptext.innerHTML = '<span class="tooltiptext">Selected text is grater than shearable content on tweet<div class="arrow-clip"><span class="tooltip-arrow"></span></div></span> '
                 setToolTip(tooltiptext, sel);
+            } else {
+                 tooltiptext.innerHTML = '';
             }
         }
     }
@@ -78,9 +84,22 @@ document.addEventListener('DOMContentLoaded', function () {
     /**
      * listen and fire the pop on select
      */
-    quotearea.addEventListener('mouseup', function () {
+    quotearea.addEventListener('click', function (ev) {
+        console.log(ev)
         select();
     })
+
+    /**
+     * close the pop up on click
+     */
+    // quotearea.addEventListener('mousedown', function () {
+    //     if(tooltiptext.innerHTML !== ''){
+    //         tooltiptext.innerHTML = '';
+    //     }
+    // })
+
+    // if (!quotearea.all) document.captureEvents(Event.MOUSEUP);
+
 
 });
 
