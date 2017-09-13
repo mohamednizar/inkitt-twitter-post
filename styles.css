@@ -7,17 +7,18 @@
 
 /* Tooltip text */
 .tooltip .tooltiptext {
+    display: inline-block;
     visibility: visible;
-    min-width: 160px;
+    min-width: 120px;
     max-width: 280px;
     font-size: 0.9em;
     background-image:linear-gradient(to top,rgba(85,85,85,.99),#555555) ;
     color: #fff;
     text-align: center;
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     border-radius: 6px;
-    top:0;
+    top:-20px;
 
     /* animate the tooltip */
      -webkit-animation: pop 0.5s; /* Safari, Chrome and Opera > 12.1 */
@@ -27,7 +28,7 @@
     animation: pop 0.5s;
 
     /* Position the tooltip text */
-    position: relative;
+    position: absolute;
     z-index: 1;
     left: 50%;
     margin-left: -60px;
